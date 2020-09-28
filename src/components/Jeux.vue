@@ -18,7 +18,7 @@
 <style scoped>
     .container{
         background:#0e0e0e;
-        display:grid;
+       
         color: white;
     }
 </style>

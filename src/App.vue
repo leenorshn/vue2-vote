@@ -1,33 +1,31 @@
 <template>
-
   <div id="app">
     <div class="container">
       <!-- <navgame></navgame> -->
       <div class="row">
-<div class="col-md-4">
-<Jeux/>
-    </div>
-    <div class="col-md-8">
-<!-- <Calculator/> -->
-    </div>
+        <div class="col-md-4">
+          <SideBar />
+        </div>
+        <div class="col-md-8">
+          <Jeux />
+        </div>
       </div>
     </div>
-    
-    
-    
   </div>
 </template>
 
 <script>
 //import Calculator from './components/Calculator.vue'
-import Jeux from './components/Jeux.vue';
+import Jeux from "./components/Jeux.vue";
+import SideBar from "./components/SideBar.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     //Calculator,
-    Jeux
-  }
-}
+    Jeux,
+    SideBar,
+  },
+};
 </script>
 
 <style>
@@ -37,6 +35,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 </style>
