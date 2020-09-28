@@ -1,16 +1,31 @@
 <template>
+
   <div id="app">
-    <Calculator/>
+    <div class="container">
+      <!-- <navgame></navgame> -->
+      <div class="row">
+<div class="col-md-4">
+<Jeux/>
+    </div>
+    <div class="col-md-8">
+<!-- <Calculator/> -->
+    </div>
+      </div>
+    </div>
+    
+    
+    
   </div>
 </template>
 
 <script>
-import Calculator from './components/Calculator.vue'
-
+//import Calculator from './components/Calculator.vue'
+import Jeux from './components/Jeux.vue';
 export default {
   name: 'App',
   components: {
-    Calculator
+    //Calculator,
+    Jeux
   }
 }
 </script>
