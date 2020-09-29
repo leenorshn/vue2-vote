@@ -1,40 +1,39 @@
-      
-
+  
 <template>
-  <h1>Resultant de votes</h1>
-       
-        <!-- <h5 class="temp">En temps reel</h5> -->
-        <!-- <div class="result-detail">
-          <div class="result-square">
-            <h5>Electeurs: <span>200</span></h5>
-          </div>
-          <div class="result-square">
-             <h5>
-              Candidats: <span>{{ candidatsNumber }}</span>
-            </h5> -->
-          <!-- </div>
-        </div> --> 
-        <!-- <div class="candidats-list">
-          <vote-display-card
-            v-for="(candidat, index) in listVotes"
-            :key="index"
-            v-bind:candidat="candidat"
-          />
-        </div> -->
-     
+  <div class="main-route">
+    <h1>Resultant de votes</h1>
+
+    <h5 class="temp">En temps reel</h5>
+    <div class="result-detail">
+      <div class="result-square">
+        <h5>Electeurs: <span>200</span></h5>
+      </div>
+      <div class="result-square">
+        <h5>
+          Candidats: <span>{{ candidatsNumber }}</span>
+        </h5>
+    </div>
+    </div>
+    <div class="candidats-list">
+      <VoteDisplayCard
+        v-for="(candidat, index) in listVotes"
+        :key="index"
+        v-bind:candidat="candidat"
+      />
+    </div>
+  
+  </div>
 </template>
 
 <script>
-//import Calculator from './components/Calculator.vue'
-// import VoteDisplayCard from "../components/VoteDisplayCard.vue";
-//import SideBar from "./components/SideBar.vue";
+import  VoteDisplayCard from "../components/VoteDisplayCard.vue";
 export default {
-  name: "App",
-  components: {
-    //Calculator,
-    // VoteDisplayCard,
-    // SideBar,
-  },
+  
+  name: "Home",
+  components:{
+VoteDisplayCard,
+  }
+  ,
   data() {
     return {
       admin:{
@@ -74,7 +73,8 @@ export default {
   computed: {
     candidatsNumber() {
       return this.listVotes.length;
-    },
+    }
+    
   },
   methods:{
     connect() {
@@ -90,9 +90,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
-.candidats-list {
+
+ .candidats-list {
   display: flex;
 }
 .result-detail {
@@ -112,4 +113,4 @@ export default {
   flex: 1;
   height: 100;
 }
-</style
+</style>

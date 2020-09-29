@@ -4,11 +4,7 @@
     <header>
       <div class="logo">Vote-UAC</div>
       <div  class="user-status">
-        <form v-if="!islogin" action="" @submit-prevent="connect()">
-          <input type="text" v-model="admin.email" placeholder="username">
-          <input type="password" v-model="admin.password" placeholder="password">
-          <button v-on:click="connect()">connexion</button>
-        </form>
+        <LoginForm v-if="isloginMetods">
         <h4 v-else>Bienvenue Admin</h4>
       </div>
 
@@ -18,24 +14,57 @@
       <div class="left-side">
         <div class="sidebar">
          
-          <a class="active"><router-link to="/home">Dashbord</router-link></a>
-          <a><router-link to="/electeur">Electeur</router-link></a>
-          <a><router-link to="/candidat">Candidats</router-link></a>
-          <a><router-link to="/admin">Admin</router-link></a>
+          <a class="active"><router-link to="/">Dashbord</router-link></a>
+          <a><router-link to="/About">Electeur</router-link></a>
+          <a><router-link to="/Candidat">Candidats</router-link></a>
+          <a><router-link to="/Cdmin">Admin</router-link></a>
         </div>
       </div>
       <div class="main-side">
-        
+        <router-view/>
     </div>
-    
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    
-    <router-view/>
+  </div>
   </div>
 </template>
 
-<style>
+<script>
+import LoginForm from "./components/LoginForm.vue";
+export default {
+  components:{
+    LoginForm
+  },
+  data() {
+    return {
+      admin:{
+        email: "",
+        password:""
+      },
+      islogin:false,
+    };
+  },
+  computed:{
+    isloginMetods(){
+      return this.islogin;
+    }
+  },
+  
+  methods:{
+    connect() {
+      if(this.admin.email==="admin@vote.cd"&&this.admin.password==="123456"){
+        console.log("Bienvenue");
+        this.islogin=true;
+      }else{
+        this.islogin=false;
+        console.log("Oops");
+      }
+    }
+  }
+    
+  
+};
+</script>
+
+<style >
 * {
   margin: 0px;
   padding: 0px;
@@ -43,8 +72,8 @@
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* //-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
@@ -60,25 +89,7 @@ header {
   padding: 0px 10px 0px 10px;
   align-items: center;
 }
-.user-status input{
-  padding:8px;
-  font-size: 16px;
-  font-weight: 400;
-  margin-right: 8px;
-  border: 1px solid #21ce99;
-  border-radius:3px;
-  
-}
-.user-status input:focus{
-  outline-color:white;
-}
-.user-status button{
-  padding:10px;
-  color:white;
-  background-color:black;
-  border:none;
-  cursor: pointer;
-}
+
 
 header .logo {
   flex: 2;
@@ -95,7 +106,7 @@ header .logo {
   background-color: cadetblue;
   height: 590px;
 }
-.left-side .sidebar {
+.sidebar {
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -108,7 +119,7 @@ header .logo {
   display: block;
   color: white;
   text-decoration: none;
-  padding: 16px;
+  padding: 8px;
 }
 .sidebar a.active {
   background-color: #fff;
@@ -121,14 +132,15 @@ header .logo {
 .sidebar a:hover:not(.active) {
   background-color: #555;
   border: 1px solid #21ce99;
-  margin: 4px;
+  margin: 0px;
   border-radius: 5px;
   color: white;
 }
+
 .main .main-side {
   flex: 7.5;
   background-color: #f3f9f5;
-  /* display: flex; */
+   /* display: flex;  */
   margin: 8px;
   border-radius: 8px;
   align-items: left;

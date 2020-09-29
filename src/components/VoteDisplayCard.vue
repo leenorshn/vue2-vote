@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  name: "vote-display-card",
+  name: "VoteDisplayCard",
   props:{
       candidat:{
           name:String,
@@ -41,7 +41,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style >
 .card-container {
   background-color: orange;
   position: relative;
