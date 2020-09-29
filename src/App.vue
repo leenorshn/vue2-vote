@@ -1,8 +1,17 @@
 <template>
   <div id="app">
     <header>
-      <div class="logo">LOGO</div>
-      <div class="user-status">Bienvenu Victor</div>
+      <div class="logo">Vote-UAC</div>
+      <div  class="user-status">
+        <form v-if="!islogin" action="" @submit-prevent="connect()">
+          <input type="text" v-model="admin.email" placeholder="username">
+          <input type="password" v-model="admin.password" placeholder="password">
+          <button v-on:click="connect()">connexion</button>
+        </form>
+        <h4 v-else>Bienvenue Admin</h4>
+      </div>
+
+
     </header>
     <div class="main">
       <div class="left-side">
@@ -52,6 +61,11 @@ export default {
   },
   data() {
     return {
+      admin:{
+        email: "",
+        password:""
+      },
+      islogin:false,
       listVotes: [
         
         {
@@ -86,6 +100,15 @@ export default {
       return this.listVotes.length;
     },
   },
+  methods:{
+    connect() {
+      if(this.admin.email==="admin@vote.cd"&&this.admin.admin==="123456"){
+        this.islogin=true;
+      }else{
+        this.islogin=false;
+      }
+    }
+  }
 };
 </script>
 
@@ -107,13 +130,33 @@ export default {
 header {
   width: 100%;
   margin: auto;
-  height: 8vh;
+  height: 10vh;
   background-color: #21ce99;
   color: white;
   display: flex;
-  padding: 8px;
+  padding: 0px 10px 0px 10px;
   align-items: center;
 }
+.user-status input{
+  padding:8px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 8px;
+  border: 1px solid #21ce99;
+  border-radius:3px;
+  
+}
+.user-status input:focus{
+  outline-color:white;
+}
+.user-status button{
+  padding:10px;
+  color:white;
+  background-color:black;
+  border:none;
+  cursor: pointer;
+}
+
 header .logo {
   flex: 2;
   text-align: left;
@@ -127,12 +170,13 @@ header .logo {
 .main .left-side {
   flex: 2;
   background-color: cadetblue;
-  height: 600px;
+  height: 590px;
 }
 .left-side .sidebar {
   margin: 0px;
   padding: 0px;
   width: 100%;
+  height: 590px;
   background-color: #21ce99;
   overflow: auto;
 }
