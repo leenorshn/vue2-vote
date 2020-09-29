@@ -15,9 +15,9 @@
         <div class="sidebar">
          
           <router-link class="a" to="/">Dashbord</router-link>
-          <router-link  class="a" to="/About">Electeur</router-link>
+          <router-link  class="a" to="/Electeur">Electeur</router-link>
           <router-link  class="a" to="/Candidat">Candidats</router-link>
-          <router-link  class="a" to="/Cdmin">Admin</router-link>
+          <router-link  class="a" to="/About">Admin</router-link>
         </div>
       </div>
       <div class="main-side">

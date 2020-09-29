@@ -29,7 +29,7 @@
 import  VoteDisplayCard from "../components/VoteDisplayCard.vue";
 export default {
   
-  name: "Home",
+  name: "DashbordPage",
   components:{
 VoteDisplayCard,
   }

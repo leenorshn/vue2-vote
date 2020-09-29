@@ -1,15 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import DashbordPage from '../views/DashbordPage.vue'
+import ElecteurPage from '../views/ElecteurPage.vue'
+import CandidatPage from '../views/CandidatPage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'DashbordPage',
+    component: DashbordPage
   },
+  {
+    path: '/Electeur',
+    name: 'ElecteurPage',
+    component: ElecteurPage
+  }
+  ,
+  {
+    path: '/Candidat',
+    name: 'CandidatPage',
+    component: CandidatPage
+  }
+  ,
   {
     path: '/about',
     name: 'About',
