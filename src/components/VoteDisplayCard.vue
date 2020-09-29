@@ -16,13 +16,16 @@
 <script>
 export default {
   name: "vote-display-card",
+  props:{
+      candidat:{
+          name:String,
+          numero:String,
+          votes:Array
+      }
+  },
   data() {
     return {
-      candidat: {
-        name: "Onesime Kapipi",
-        numero: "3",
-        votes: ["1", "4", "18"],
-      },
+      
     };
   },
   methods: {},
@@ -40,6 +43,7 @@ export default {
 .card-container {
   background-color: orange;
   position: relative;
+  height: fit-content;
   margin: 10px;
   border-radius: 8px;
   padding: 10px;

@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="main-side">
-        <vote-display-card />
+        <vote-display-card v-for="(vote,index) in listVotes" :key="index" :candidat="vote"/>
       </div>
     </div>
   </div>
@@ -37,22 +37,22 @@ export default {
         {
           name: "Onesime Kapipi",
           numero: "3",
-          votes: ["1", "4", "18"],
+          votes: ["6", "14", "19"],
         },
         {
           name: "Zairoi Kakwara",
           numero: "1",
-          votes: ["1", "4", "18"],
+          votes: ["9", "11", "12","20"],
         },
         {
-          name: "Dany",
-          numero: "3",
-          votes: ["1", "4", "18"],
+          name: "Christian Kamala",
+          numero: "2",
+          votes: ["1", "4", "18","13","7","16","8"],
         },
         {
-          name: "Onesime Kapipi",
-          numero: "3",
-          votes: ["1", "4", "18"],
+          name: "Victor Katembo",
+          numero: "4",
+          votes: ["2", "3", "17","10","5"],
         },
       ],
     };
@@ -132,6 +132,7 @@ header .logo {
 .main .main-side {
   flex: 7.5;
   background-color: #f3f9f5;
+  display: flex;
   margin: 8px;
   border-radius: 8px;
   align-items: left;
