@@ -2,7 +2,7 @@
   <div id="app">
     <header>
         <div class="logo">
-          logo
+          LOGO
         </div>
         <div class="user-status">
           Bienvenu Victor
@@ -10,7 +10,7 @@
     </header>
     <div class="main">
      <div class="left-side">
-<h4>Moderna</h4>
+
      </div>
      <div class="main-side">
 
@@ -35,7 +35,9 @@ export default {
 
 <style>
 *{
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -44,11 +46,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  width: 100%;
 }
 header{
   width: 100%;
-  height: 10vh;
-  background-color:orange;
+  margin: auto;
+  height: 8vh;
+  background-color:#21ce99;
+  color: white;
   display:flex;
   padding: 8px;
   justify-content: center;
@@ -64,14 +69,13 @@ header .logo{
   flex:2;
   background-color:cadetblue;
   height: 650px;
-  border-radius: 8px;
-  padding-right: 200px;
+  padding-right: 20px;
 }
 .main .main-side{
-  flex:8;
-  background-color:blue;
+  flex:7.5;
+  background-color:#f3f9f5;
+  margin:8px;
   border-radius: 8px;
-  margin-left:16px;
   align-items: left;
 }
 </style>
