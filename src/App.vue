@@ -14,7 +14,20 @@
         </div>
       </div>
       <div class="main-side">
-        <vote-display-card v-for="(vote,index) in listVotes" :key="index" :candidat="vote"/>
+        <h1>Resultant de votes</h1>
+        <h5 class="temp">En temps reel</h5>
+        <div class="result-detail">
+           <div class="result-square">
+              <h5>Electeurs:   <span>200</span></h5>
+           </div>
+           <div class="result-square">
+              <h5>Candidats:   <span>{{candidatsNumber}}</span></h5>
+           </div>
+        </div>
+        <div class="candidats-list">
+<vote-display-card v-for="(candidat,index) in listVotes" :key="index" v-bind:candidat="candidat"/>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -57,6 +70,11 @@ export default {
       ],
     };
   },
+  computed:{
+    candidatsNumber(){
+      return this.listVotes.length;
+    }
+  }
 };
 </script>
 
@@ -132,9 +150,31 @@ header .logo {
 .main .main-side {
   flex: 7.5;
   background-color: #f3f9f5;
-  display: flex;
+  /* display: flex; */
   margin: 8px;
   border-radius: 8px;
   align-items: left;
 }
+.candidats-list{
+  display: flex;
+}
+.result-detail{
+  background-color: #f3f3f3;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.result-detail span{
+  color:#21ce99;
+  font-size: 20px;
+}
+.result-square{
+  flex:1;
+  height: 100;
+}
+
+
 </style>
