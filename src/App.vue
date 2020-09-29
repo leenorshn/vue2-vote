@@ -7,27 +7,55 @@
     <div class="main">
       <div class="left-side">
         <div class="sidebar">
-          <a class="active" href="#home">Home</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
+          <a class="active" href="#home">Dashbord</a>
+          <a href="#news">Electeur</a>
+          <a href="#contact">Candidats</a>
+          <a href="#about">Admin</a>
         </div>
       </div>
-      <div class="main-side"></div>
+      <div class="main-side">
+        <vote-display-card />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 //import Calculator from './components/Calculator.vue'
-//import Jeux from "./components/Jeux.vue";
+import VoteDisplayCard from "./components/VoteDisplayCard.vue";
 //import SideBar from "./components/SideBar.vue";
 export default {
   name: "App",
   components: {
     //Calculator,
-    //Jeux,
+    VoteDisplayCard,
     // SideBar,
+  },
+  data() {
+    return {
+      listVotes: [
+        {
+          name: "Onesime Kapipi",
+          numero: "3",
+          votes: ["1", "4", "18"],
+        },
+        {
+          name: "Zairoi Kakwara",
+          numero: "1",
+          votes: ["1", "4", "18"],
+        },
+        {
+          name: "Dany",
+          numero: "3",
+          votes: ["1", "4", "18"],
+        },
+        {
+          name: "Onesime Kapipi",
+          numero: "3",
+          votes: ["1", "4", "18"],
+        },
+      ],
+    };
   },
 };
 </script>
@@ -70,27 +98,35 @@ header .logo {
 .main .left-side {
   flex: 2;
   background-color: cadetblue;
-  height: 100%;
-  padding-right: 20px;
+  height: 600px;
 }
 .left-side .sidebar {
   margin: 0px;
   padding: 0px;
+  width: 100%;
+  background-color: #21ce99;
   overflow: auto;
 }
 
 .sidebar a {
   display: block;
-  color: black;
+  color: white;
   text-decoration: none;
   padding: 16px;
 }
 .sidebar a.active {
-  background-color: #4caf50;
-  color: white;
+  background-color: #fff;
+  border: 1px solid #21ce99;
+  border-radius: 5px;
+  font-weight: 700;
+  margin: 4px;
+  color: #21ce99;
 }
 .sidebar a:hover:not(.active) {
   background-color: #555;
+  border: 1px solid #21ce99;
+  margin: 4px;
+  border-radius: 5px;
   color: white;
 }
 .main .main-side {
