@@ -4,7 +4,7 @@
     <header>
       <div class="logo">Vote-UAC</div>
       <div  class="user-status">
-        <LoginForm v-if="isloginMetods">
+        <LoginForm v-if="!isloginMetods"/>
         <h4 v-else>Bienvenue Admin</h4>
       </div>
 
@@ -14,10 +14,10 @@
       <div class="left-side">
         <div class="sidebar">
          
-          <a class="active"><router-link to="/">Dashbord</router-link></a>
-          <a><router-link to="/About">Electeur</router-link></a>
-          <a><router-link to="/Candidat">Candidats</router-link></a>
-          <a><router-link to="/Cdmin">Admin</router-link></a>
+          <router-link class="a" to="/">Dashbord</router-link>
+          <router-link  class="a" to="/About">Electeur</router-link>
+          <router-link  class="a" to="/Candidat">Candidats</router-link>
+          <router-link  class="a" to="/Cdmin">Admin</router-link>
         </div>
       </div>
       <div class="main-side">
@@ -72,8 +72,8 @@ export default {
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  /* //-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
@@ -111,17 +111,23 @@ header .logo {
   padding: 0px;
   width: 100%;
   height: 590px;
+  display: flex;
+  flex-direction: column;
   background-color: #21ce99;
   overflow: auto;
 }
 
-.sidebar a {
+ .sidebar .a {
   display: block;
   color: white;
   text-decoration: none;
-  padding: 8px;
+  background-color: #21ce99;
+  border: 1px solid #f1f1f1;
+  padding: 10px 0px 10px 0px;
+  margin: 1px 10px 1px 10px;
+  border-radius:4px;
 }
-.sidebar a.active {
+.sidebar .a.active {
   background-color: #fff;
   border: 1px solid #21ce99;
   border-radius: 5px;
@@ -129,12 +135,10 @@ header .logo {
   margin: 4px;
   color: #21ce99;
 }
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  border: 1px solid #21ce99;
-  margin: 0px;
+.sidebar .a:hover:not(.active) {
+  background-color:white;
   border-radius: 5px;
-  color: white;
+  color: #0a0a0a;
 }
 
 .main .main-side {
