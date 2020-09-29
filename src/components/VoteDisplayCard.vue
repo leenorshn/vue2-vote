@@ -3,7 +3,9 @@
       <div class="user-number">
           <h5>{{candidat.numero}}</h5>
       </div>
-    <div class="avatar-container"></div>
+    <div class="avatar-container">
+        <img :src="candidat.avatar" alt="image">
+    </div>
     <div class="username-container">
       {{ candidat.name }}
     </div>
@@ -58,6 +60,11 @@ export default {
   width: 120px;
   align-self: center;
   border-radius: 70px;
+}
+.avatar-container img{
+    border-radius: 50%;
+    height: 120px;
+    width:120px
 }
 .user-vote-result {
   padding: 16px;

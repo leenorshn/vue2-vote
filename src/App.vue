@@ -15,19 +15,25 @@
       </div>
       <div class="main-side">
         <h1>Resultant de votes</h1>
+       
         <h5 class="temp">En temps reel</h5>
         <div class="result-detail">
-           <div class="result-square">
-              <h5>Electeurs:   <span>200</span></h5>
-           </div>
-           <div class="result-square">
-              <h5>Candidats:   <span>{{candidatsNumber}}</span></h5>
-           </div>
+          <div class="result-square">
+            <h5>Electeurs: <span>200</span></h5>
+          </div>
+          <div class="result-square">
+            <h5>
+              Candidats: <span>{{ candidatsNumber }}</span>
+            </h5>
+          </div>
         </div>
         <div class="candidats-list">
-<vote-display-card v-for="(candidat,index) in listVotes" :key="index" v-bind:candidat="candidat"/>
+          <vote-display-card
+            v-for="(candidat, index) in listVotes"
+            :key="index"
+            v-bind:candidat="candidat"
+          />
         </div>
-        
       </div>
     </div>
   </div>
@@ -47,34 +53,39 @@ export default {
   data() {
     return {
       listVotes: [
-        {
-          name: "Onesime Kapipi",
-          numero: "3",
-          votes: ["6", "14", "19"],
-        },
+        
         {
           name: "Zairoi Kakwara",
           numero: "1",
-          votes: ["9", "11", "12","20"],
+          avatar: "./assets/afro.PNG",
+          votes: ["9", "11", "12", "20"],
         },
         {
           name: "Christian Kamala",
           numero: "2",
-          votes: ["1", "4", "18","13","7","16","8"],
+          avatar: "./assets/success.PNG",
+          votes: ["1", "4", "18", "13", "7", "16", "8"],
+        },
+        {
+          name: "Onesime Kapipi",
+          numero: "3",
+          avatar: "./assets/yoga.PNG",
+          votes: ["6", "14", "19"],
         },
         {
           name: "Victor Katembo",
           numero: "4",
-          votes: ["2", "3", "17","10","5"],
+          avatar: "./assets/happy.PNG",
+          votes: ["2", "3", "17", "10", "5"],
         },
       ],
     };
   },
-  computed:{
-    candidatsNumber(){
+  computed: {
+    candidatsNumber() {
       return this.listVotes.length;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -155,10 +166,10 @@ header .logo {
   border-radius: 8px;
   align-items: left;
 }
-.candidats-list{
+.candidats-list {
   display: flex;
 }
-.result-detail{
+.result-detail {
   background-color: #f3f3f3;
   width: 500px;
   margin: 0 auto;
@@ -167,14 +178,12 @@ header .logo {
   align-items: center;
   height: 100px;
 }
-.result-detail span{
-  color:#21ce99;
+.result-detail span {
+  color: #21ce99;
   font-size: 20px;
 }
-.result-square{
-  flex:1;
+.result-square {
+  flex: 1;
   height: 100;
 }
-
-
 </style>
