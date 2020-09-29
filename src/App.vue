@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <header>
       <div class="logo">Vote-UAC</div>
       <div  class="user-status">
@@ -16,101 +17,23 @@
     <div class="main">
       <div class="left-side">
         <div class="sidebar">
-          <a class="active" href="#home">Dashbord</a>
-          <a href="#news">Electeur</a>
-          <a href="#contact">Candidats</a>
-          <a href="#about">Admin</a>
+         
+          <a class="active"><router-link to="/home">Dashbord</router-link></a>
+          <a><router-link to="/electeur">Electeur</router-link></a>
+          <a><router-link to="/candidat">Candidats</router-link></a>
+          <a><router-link to="/admin">Admin</router-link></a>
         </div>
       </div>
       <div class="main-side">
-        <h1>Resultant de votes</h1>
-       
-        <h5 class="temp">En temps reel</h5>
-        <div class="result-detail">
-          <div class="result-square">
-            <h5>Electeurs: <span>200</span></h5>
-          </div>
-          <div class="result-square">
-            <h5>
-              Candidats: <span>{{ candidatsNumber }}</span>
-            </h5>
-          </div>
-        </div>
-        <div class="candidats-list">
-          <vote-display-card
-            v-for="(candidat, index) in listVotes"
-            :key="index"
-            v-bind:candidat="candidat"
-          />
-        </div>
-      </div>
+        
     </div>
+    
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    
+    <router-view/>
   </div>
 </template>
-
-<script>
-//import Calculator from './components/Calculator.vue'
-import VoteDisplayCard from "./components/VoteDisplayCard.vue";
-//import SideBar from "./components/SideBar.vue";
-export default {
-  name: "App",
-  components: {
-    //Calculator,
-    VoteDisplayCard,
-    // SideBar,
-  },
-  data() {
-    return {
-      admin:{
-        email: "",
-        password:""
-      },
-      islogin:false,
-      listVotes: [
-        
-        {
-          name: "Zairoi Kakwara",
-          numero: "1",
-          avatar: "./assets/afro.PNG",
-          votes: ["9", "11", "12", "20"],
-        },
-        {
-          name: "Christian Kamala",
-          numero: "2",
-          avatar: "./assets/success.PNG",
-          votes: ["1", "4", "18", "13", "7", "16", "8"],
-        },
-        {
-          name: "Onesime Kapipi",
-          numero: "3",
-          avatar: "./assets/yoga.PNG",
-          votes: ["6", "14", "19"],
-        },
-        {
-          name: "Victor Katembo",
-          numero: "4",
-          avatar: "./assets/happy.PNG",
-          votes: ["2", "3", "17", "10", "5"],
-        },
-      ],
-    };
-  },
-  computed: {
-    candidatsNumber() {
-      return this.listVotes.length;
-    },
-  },
-  methods:{
-    connect() {
-      if(this.admin.email==="admin@vote.cd"&&this.admin.admin==="123456"){
-        this.islogin=true;
-      }else{
-        this.islogin=false;
-      }
-    }
-  }
-};
-</script>
 
 <style>
 * {
@@ -209,25 +132,5 @@ header .logo {
   margin: 8px;
   border-radius: 8px;
   align-items: left;
-}
-.candidats-list {
-  display: flex;
-}
-.result-detail {
-  background-color: #f3f3f3;
-  width: 500px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-.result-detail span {
-  color: #21ce99;
-  font-size: 20px;
-}
-.result-square {
-  flex: 1;
-  height: 100;
 }
 </style>
