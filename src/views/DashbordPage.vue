@@ -44,7 +44,7 @@ VoteDisplayCard,
       listVotes: [
         
         {
-          name: "Zairoi Kakwara",
+          name: "Zairoi Justin",
           numero: "1",
           avatar: "./assets/afro.PNG",
           votes: ["9", "11", "12", "20"],
