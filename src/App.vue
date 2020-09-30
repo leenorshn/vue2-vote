@@ -83,6 +83,7 @@ header {
   width: 100%;
   margin: auto;
   height: 10vh;
+  
   background-color: #21ce99;
   color: white;
   display: flex;
@@ -97,6 +98,7 @@ header .logo {
 }
 .main {
   display: flex;
+ 
 }
 .user-status {
   display: flex;
@@ -104,16 +106,16 @@ header .logo {
 .main .left-side {
   flex: 2;
   background-color: cadetblue;
-  height: 590px;
+  height: 560px;
 }
 .sidebar {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 590px;
+  height: 560px;
   display: flex;
   flex-direction: column;
-  background-color: #21ce99;
+  background-color: #94f1d5;
   overflow: auto;
 }
 
@@ -122,10 +124,10 @@ header .logo {
   color: white;
   text-decoration: none;
   background-color: #21ce99;
-  border: 1px solid #f1f1f1;
+  /* border: 1px solid #f1f1f1; */
   padding: 10px 0px 10px 0px;
-  margin: 1px 10px 1px 10px;
-  border-radius:4px;
+  margin: 1px 0px 1px 0px;
+  border-radius:2px;
 }
 .sidebar .a.active {
   background-color: #fff;
@@ -143,7 +145,7 @@ header .logo {
 
 .main .main-side {
   flex: 7.5;
-  background-color: #f3f9f5;
+  /* background-color: #f3f9f5; */
    /* display: flex;  */
   margin: 8px;
   border-radius: 8px;
