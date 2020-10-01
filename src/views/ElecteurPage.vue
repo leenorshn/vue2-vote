@@ -1,10 +1,10 @@
 <template>
     <div class="electeur-main-page">
        <div class="student-form-main">
-    <input type="text" placeholder="Noms completes" />
+    <input type="text" v-model="newElecteur.name" placeholder="Noms completes" />
     <div class="combo">
       <label for="pet-select">faculte:</label>
-      <select name="pets" id="faculte">
+      <select name="pets" id="faculte" v-model="newElecteur.faculte">
         <option value="GI">Gestion-Info</option>
         <option value="CU">Communication</option>
         <option value="SA">Genie-info</option>
@@ -12,7 +12,7 @@
     </div>
     <div class="combo">
       <label for="pet-select">promotion:</label>
-      <select name="pets" id="promotion">
+      <select name="pets" id="promotion" v-model="newElecteur.promotion">
         <option value="Prepa">Prepas</option>
         <option value="G1">G1</option>
         <option value="G2">G2</option>
@@ -21,8 +21,8 @@
         <option value="L2">L3</option>
       </select>
     </div>
-    <input type="text" placeholder="Matricule" />
-    <button>Enregister</button>
+    <input type="text" placeholder="Matricule" v-model="newElecteur.matricule" />
+    <button @click="addElecteur()">Enregister</button>
   </div>
         <div class="electeur-all-page">
             <div class="list-electeur">
@@ -42,7 +42,7 @@
                  <p>{{currentElecteur.faculte}}</p>
                </div>
                <div class="action">
-                 <button @click="deleteElecteur(index)">Supprimer</button>
+                 <button @click.prevent="deleteElecteur(index)" >Supprimer</button>
                </div>
             </div>
             <div v-else class="detail-electeur-default">
@@ -62,13 +62,28 @@ export default {
         this.currentElecteur=this.electeurs[index];
       },
       deleteElecteur(index){
-        this.$delete(this.electeur,index);
+        this.$delete(this.electeurs,index);
+      },
+      addElecteur(){
+        this.electeurs.unshift({
+          name:this.newElecteur.name,
+          matricule:this.newElecteur.matricule,
+          faculte:this.newElecteur.faculte,
+          promotion:this.newElecteur.promotion
+        });
       }
     },
     data() {
     return {
       name: "Jeux de la vie",
       currentElecteur:null,
+      newElecteur:{
+        name:"",
+        matricule:"",
+        promotion:"",
+        faculte:"",
+      }
+      ,
       electeurs:[
           {
           name:"Samy thony",
@@ -181,8 +196,14 @@ button {
         margin-left:10px;
         margin-right:10px ;
         padding:16px;
+        animation: electeurSelected 1.3s ease-in forwards  linear;
         flex: 7;
          background-color:rgba(8, 26, 61,0.05);
+    }
+    @keyframes electeurSelected {
+      0%{transform: translateY(0)}
+      50%{transform: translateY(40px)}
+      100%{transform: translateY(80px)}
     }
     .card-item{
         display: flex;
