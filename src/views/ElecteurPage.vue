@@ -195,6 +195,16 @@ button {
         overflow:auto;
         border-radius: 8px;
     }
+    .list-electeur::-webkit-scrollbar{
+      width: 10px;
+    }
+    .list-electeur::-webkit-scrollbar-thumb{
+      background-color:#21ce99;
+      border-radius:4px;
+    }
+    .list-electeur::-webkit-scrollbar-track{
+      background-color:white;
+    }
     .detail-electeur{
         border-radius: 8px;
         margin-left:10px;

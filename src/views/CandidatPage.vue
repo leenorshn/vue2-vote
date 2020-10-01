@@ -9,7 +9,10 @@
           car nous utilisons votre matricule pour vous identifier
         </p>
       </div>
-      <img src="../assets/profile.png" alt="" />
+      <div class="">
+          <img src="../assets/profile.png" alt="" />
+          <h5>Choisir image ici</h5>
+      </div>
       <div class="right-form">
         <input type="text" placeholder="Matricule" />
         <input type="text" placeholder="numero" />
@@ -20,7 +23,7 @@
     <div class="list-candidat">
         <h4>List de Candidat</h4>
         <div class="list-candidat-zone">
-            <CandidatCard v-for="(candidat,index) in candidats" :key="index"/>
+            <CandidatCard v-for="(candidat,index) in candidats" :key="index" :candidat="candidat"/>
         </div>
     </div>
   </div>
@@ -55,14 +58,24 @@ CandidatCard
           faculte: "GI",
         },
         {
-          avatar: "../assets/yoga.PNG",
-          numero: "1",
+          avatar: "../assets/happy.PNG",
+          numero: "2",
           sloga: "Je suis le candidat de l'espoir pour vous",
           name: "Bertra kalwana",
           matricule: "2020-OL-GI-03",
           promotion: "G3",
           faculte: "GI",
         },
+        {
+          avatar: "../assets/yoga.PNG",
+          numero: "3",
+          sloga: "Je suis le candidat de l'espoir pour vous",
+          name: "Bertra kalwana",
+          matricule: "2020-OL-GI-03",
+          promotion: "G3",
+          faculte: "GI",
+        }
+    
       ],
     };
   },
@@ -73,6 +86,7 @@ CandidatCard
   display: flex;
   border-radius: 10px;
   background-color: rgba(214, 226, 218, 0.3);
+  flex-direction: column;
 }
 
 .formulaire-candidat {
@@ -101,6 +115,7 @@ CandidatCard
 .formulaire-candidat img {
   width: 140px;
   height: 140px;
+  margin-bottom: 20px;
   border-radius: 70px;
 }
 .formulaire-candidat .right-form {
@@ -137,5 +152,23 @@ textarea {
 textarea:focus {
   outline-color: #9af1d7;
 }
+.list-candidat{
+    padding:16px;
+    text-align: start;
+}
+.list-candidat h4 {
+    padding-bottom: 20px;
+}
+.list-candidat-zone{
+    display: flex;
+    justify-content:flex-start;
+    width:1000px;
+    overflow-x: auto;
+    
+}
+
+/* .list-candidat-zone::-webkit-scrollbar{
+    width: 10px;
+} */
 </style>
 

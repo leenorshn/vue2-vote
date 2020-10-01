@@ -105,13 +105,13 @@ header .logo {
 .main .left-side {
   flex: 2;
   background-color: cadetblue;
-  height: 560px;
+  height: 590px;
 }
 .sidebar {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 560px;
+  height: 590px;
   display: flex;
   flex-direction: column;
   background-color: #94f1d5;
