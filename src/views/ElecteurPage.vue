@@ -41,9 +41,13 @@
                  <h6>{{currentElecteur.matricule}}</h6>
                  <p>{{currentElecteur.faculte}}</p>
                </div>
+               <div class="action">
+                 <button @click="deleteElecteur(index)">Supprimer</button>
+               </div>
             </div>
             <div v-else class="detail-electeur-default">
-              <h3>Electeur detail</h3>
+              <h2>Electeur detail</h2><br>
+              <p>Cliquez sur un electeur pour voir son detail ici</p>
             </div>
         </div>
     </div>
@@ -56,6 +60,9 @@ export default {
     methods:{
       viewDetailElecteur(index) {
         this.currentElecteur=this.electeurs[index];
+      },
+      deleteElecteur(index){
+        this.$delete(this.electeur,index);
       }
     },
     data() {
@@ -215,7 +222,7 @@ button {
     .identity{
       padding:8px;
       margin:16px;
-
+      background-color:white;
     }
     .detail-electeur-default{
         border-radius: 8px;
@@ -223,8 +230,29 @@ button {
         margin-right:10px ;
         padding:16px;
         flex: 7;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
          background-color:rgba(8, 26, 61,0.05);
+    }
+
+    .detail-electeur-default h2 {
+      color: #21ce99;
+    }
+    .detail-electeur-default p{
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .detail-electeur .action button{
+      background-color: red;
+      color:white;
+      padding: 10px 0px 10px 0px;
+      border:none;
+      cursor: pointer;
+    }
+    button:focus{
+      outline-color: #21ce99;
     }
 
     
