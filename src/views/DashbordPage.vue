@@ -104,6 +104,7 @@ VoteDisplayCard,
   justify-content: center;
   align-items: center;
   height: 100px;
+  border-radius:10px;
 }
 .result-detail span {
   color: #21ce99;

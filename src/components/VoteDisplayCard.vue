@@ -9,7 +9,7 @@
     <div class="username-container">
       {{ candidat.name }}
     </div>
-    <div class="user-vote-result">
+    <div id="user-vote-result">
       <h3><span class="percent">{{ calculatePercentage + "%" }}</span> <span>votes</span></h3>
       <h5>{{ candidatTotalVote }} vois / 20 participants</h5>
     </div>
@@ -66,10 +66,11 @@ export default {
     height: 120px;
     width:120px
 }
-.user-vote-result {
+#user-vote-result {
   padding: 16px;
   background-color:white;
   border-radius:6px;
+  color:#0a063d;
 }
 .username-container{
 padding: 10px;
