@@ -83,7 +83,6 @@ header {
   width: 100%;
   margin: auto;
   height: 10vh;
-  
   background-color: #21ce99;
   color: white;
   display: flex;
@@ -145,8 +144,6 @@ header .logo {
 
 .main .main-side {
   flex: 7.5;
-  /* background-color: #f3f9f5; */
-   /* display: flex;  */
   margin: 8px;
   border-radius: 8px;
   align-items: left;
