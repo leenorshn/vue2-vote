@@ -26,7 +26,7 @@
   </div>
         <div class="electeur-all-page">
             <div class="list-electeur">
-                <div class="card-item" v-for="(electeur,index) in electeurs" :key="index">
+                <div class="card-item" v-for="(electeur,index) in electeurs" :key="index" @click="viewDetailElecteur(index)">
                     <img src="../assets/profile.png" alt="">
                     <div class="section-two">
                         <h4>{{electeur.name}}</h4>
@@ -34,8 +34,16 @@
                     </div>
                 </div>
             </div>
-            <div class="detail-electeur">
-
+            <div v-if="currentElecteur" class="detail-electeur">
+               <img src="../assets/profile.png">,
+               <div class="identity">
+                 <h4>{{currentElecteur.name}}</h4>
+                 <h6>{{currentElecteur.matricule}}</h6>
+                 <p>{{currentElecteur.faculte}}</p>
+               </div>
+            </div>
+            <div v-else class="detail-electeur-default">
+              <h3>Electeur detail</h3>
             </div>
         </div>
     </div>
@@ -45,10 +53,15 @@
 
 export default {
     name:"ElecteurPage",
-    
+    methods:{
+      viewDetailElecteur(index) {
+        this.currentElecteur=this.electeurs[index];
+      }
+    },
     data() {
     return {
       name: "Jeux de la vie",
+      currentElecteur:null,
       electeurs:[
           {
           name:"Samy thony",
@@ -87,7 +100,8 @@ export default {
           faculte:"GI"
       }
       ]
-    };
+    }
+    
   },
     
 }
@@ -159,6 +173,7 @@ button {
         border-radius: 8px;
         margin-left:10px;
         margin-right:10px ;
+        padding:16px;
         flex: 7;
          background-color:rgba(8, 26, 61,0.05);
     }
@@ -189,6 +204,27 @@ button {
         flex-direction: column;
         display: flex;
         justify-content: center;
+    }
+
+    .detail-electeur img{
+      width:200px;
+      height: 200px;
+      border-radius: 8px;
+    }
+    
+    .identity{
+      padding:8px;
+      margin:16px;
+
+    }
+    .detail-electeur-default{
+        border-radius: 8px;
+        margin-left:10px;
+        margin-right:10px ;
+        padding:16px;
+        flex: 7;
+        text-align: center;
+         background-color:rgba(8, 26, 61,0.05);
     }
 
     
