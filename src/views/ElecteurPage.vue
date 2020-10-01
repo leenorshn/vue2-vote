@@ -71,6 +71,10 @@ export default {
           faculte:this.newElecteur.faculte,
           promotion:this.newElecteur.promotion
         });
+        this.newElecteur.name=""
+        this.newElecteur.matricule=""
+        this.newElecteur.faculte=""
+        this.newElecteur.promotion=""
       }
     },
     data() {
@@ -196,14 +200,14 @@ button {
         margin-left:10px;
         margin-right:10px ;
         padding:16px;
-        animation: electeurSelected 1.3s ease-in forwards  linear;
+        
         flex: 7;
          background-color:rgba(8, 26, 61,0.05);
     }
     @keyframes electeurSelected {
-      0%{transform: translateY(0)}
-      50%{transform: translateY(40px)}
-      100%{transform: translateY(80px)}
+      0%{transform: translateX(0px)}
+      50%{transform: translateX(400px)}
+      100%{transform: translateX(800px)}
     }
     .card-item{
         display: flex;
@@ -238,6 +242,7 @@ button {
       width:200px;
       height: 200px;
       border-radius: 8px;
+      animation: electeurSelected 1.3s ease-in forwards  linear;
     }
     
     .identity{
