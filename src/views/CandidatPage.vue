@@ -20,7 +20,7 @@
     <div class="list-candidat">
         <h4>List de Candidat</h4>
         <div class="list-candidat-zone">
-            <CandidatCard />
+            <CandidatCard v-for="(candidat,index) in candidats" :key="index"/>
         </div>
     </div>
   </div>
