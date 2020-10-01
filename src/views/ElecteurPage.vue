@@ -210,15 +210,19 @@ button {
         margin-left:10px;
         margin-right:10px ;
         padding:16px;
-        
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        animation: electeurSelected 0.4s ease-in;
         flex: 7;
          background-color:rgba(8, 26, 61,0.05);
     }
     @keyframes electeurSelected {
-      0%{transform: translateX(0px)}
-      50%{transform: translateX(400px)}
-      100%{transform: translateX(800px)}
+      0%{transform:translateY(-20px)}
+      100%{transform:translateY(0px)}
     }
+  
     .card-item{
         display: flex;
         padding:8px;
@@ -252,13 +256,18 @@ button {
       width:200px;
       height: 200px;
       border-radius: 8px;
-      animation: electeurSelected 1.3s ease-in forwards  linear;
+      
     }
+
+    
     
     .identity{
       padding:8px;
       margin:16px;
       background-color:white;
+      width: 300px;
+      border-radius:10px;
+
     }
     .detail-electeur-default{
         border-radius: 8px;
@@ -289,6 +298,9 @@ button {
     }
     button:focus{
       outline-color: #21ce99;
+    }
+    .identity h6{
+      color: #21ce99;
     }
 
     

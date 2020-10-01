@@ -37,7 +37,7 @@ export default {
 </script>
 <style >
 .card-container {
-  background-color: orange;
+  background-color: rgb(235, 148, 8);
   position: relative;
   height: fit-content;
   margin: 10px;
@@ -45,6 +45,7 @@ export default {
   padding: 10px;
   justify-content: center;
   width: 240px;
+  color: white;
   display: flex;
   flex-direction: column;
 }
@@ -62,7 +63,8 @@ export default {
 }
 .user-vote-result {
   padding: 16px;
-  background-color: white;
+  background-color: orange;
+  color: black;
   border-radius: 6px;
 }
 .username-container {
